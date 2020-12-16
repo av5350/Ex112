@@ -23,12 +23,13 @@
             android:layout_weight="5" />
 
         <EditText
+            android:id="@+id/inputView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Name"
+            android:inputType="textPersonName" />
 
         <Space
             android:layout_width="match_parent"

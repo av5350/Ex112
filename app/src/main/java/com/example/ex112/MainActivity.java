@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -20,7 +21,9 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int counter;
+    String inputText;
     TextView countView;
+    EditText inputView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         countView = (TextView) findViewById(R.id.countView);
+        inputView = (EditText) findViewById(R.id.inputView);
 
         getData();
     }
@@ -39,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
     {
         SharedPreferences data = getSharedPreferences("COUNTER_DATA",MODE_PRIVATE);
         counter = data.getInt("counter", 0);
+        inputText = data.getString("text", "");
         countView.setText(String.valueOf(counter));
+        inputView.setText(inputText);
     }
 
     /**
@@ -68,9 +74,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view the view
      */
     public void exitApp(View view) {
+        inputText = inputView.getText().toString();
         SharedPreferences data = getSharedPreferences("COUNTER_DATA",MODE_PRIVATE);
         SharedPreferences.Editor editor = data.edit();
-        editor.putInt("counter",counter);
+        editor.putInt("counter", counter);
+        editor.putString("text", inputText);
         editor.commit();
 
         finish();

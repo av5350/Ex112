@@ -11,7 +11,7 @@ import android.view.MenuItem;
  * The type Credits activity.
  * @author Itey Weintraub <av5350@bs.amalnet.k12.il>
  * @version	1
- * @since		5/12/2020
+ * @since 11/12/2020
  * short description:
  *      This activity shows the credits of the app :)
  */

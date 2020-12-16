@@ -17,7 +17,9 @@ import android.widget.TextView;
  *
  * @author Itey Weintraub <av5350@bs.amalnet.k12.il>
  * @version 1
- * @since 5 /12/2020 short description:      This activity let the user to use SharedPreferences counter data
+ * @since 11/12/2020
+ * short description:
+ *      This activity let the user to use SharedPreferences counter data
  */
 public class MainActivity extends AppCompatActivity {
     int counter;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Gets the last app run counter data (or 0 if its the first run)
+     * Gets the last app run counter and text data (or 0 if its the first run)
      */
     public void getData()
     {
